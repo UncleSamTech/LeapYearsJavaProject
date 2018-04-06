@@ -1,0 +1,52 @@
+public class LeapYearClass{
+
+public LeapYearClass(){}
+
+
+
+String leap_year = "Valid Leap Year";//variable leap_year of String datatype is declared and assigned a value
+int year_limit = 10000; //the year limit it can loop through
+String error_message = "Invalid Length";//variable error_message of String datatype is declared and assigned a value
+
+
+/**
+This method checkLeapYears has one arguement which is the parameter of years it will accept when 
+the method is called
+It must have a valid length of four and must be greater than 0
+
+@params years
+
+*/
+public String checkLeapYears(int years){
+
+/**
+This if statement checks our entry and confirms the length to know if it is up to 4 , greater than zero and
+within the allowable limit
+if it doesn't meet those requirements it returns an error message for us
+*/
+if((int)(Math.log10(years)+1)!=4 && years<0 && years > year_limit){
+System.out.print(error_message);
+}
+/**
+This area runs after it has sucessfully passed the criteria..
+It loops through from 0 - 10000 and checks for years that are leap years
+Since leap years occurs every four years..It loops through and checks for entry that could divide through four easily 
+without any remainder..That is the area of 
+@exp year%4==0
+It then prints out all the leap years on seperate lines
+@values This year 2000 is a leap year
+*/
+else{
+
+for(int i = 0 ; i < year_limit; i++ ){
+if(year%4==0){
+System.out.println("This year " + year + " is a " + leap_year);
+}//closing brace of if
+}//closing brace of if
+
+}//closing brace of else
+
+}// closing brace for the method
+
+
+}//closing brace for the class
